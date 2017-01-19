@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        input{position: fixed; left: 0;
+            top:0;}
+        input:nth-child(2){
+            left: 50px;
+        }
+        input:nth-child(3){
+            left:110px;
+        }
+        span{display: block; width: 100px; height: 100px; float: left; text-align: center; line-height: 100px; border-radius:50%; position: absolute;
+            left:0;
+            top:40px;}
+        div span:nth-child(1){
+            background: red;
+        }
+        div span:nth-child(2){
+            background: blue;
+            left: 100px;
+        }
+        div span:nth-child(3){
+            background: #f90;
+            left: 210px;
+        }
+        div span:nth-child(4){
+            background: green;
+            left: 320px;
+        }
+        div span:nth-child(5){
+             background: pink;
+             left: 430px;
+         }
+        div span:nth-child(6){
+            background: #CCCCCC;
+            left: 540px;
+        }
+        div span:nth-child(7){
+            background: #666666;
+            left: 650px;
+        }
+        div span:nth-child(8){
+            background: #ff9900;
+            left: 760px;
+        }
+        div span:nth-child(9){
+            background: #00aaee;
+            left: 870px;
+        }
+        div span:nth-child(10){
+            background: #3b7ae3;
+            left: 1000px;
+        }
+        span + span{margin-left: 10px;}
+    </style>
+</head>
+<body>
+   <input type="button" id="dd" value="开始">
+   <input type="button" id="tingzhi" value="停止" >
+   <input type="button" id="jieshu" value="结束">
+   <div>
+       <span>跳来跳去</span>
+       <span>跳来跳去</span>
+       <span>跳来跳去</span>
+       <span>跳来跳去</span>
+       <span>跳来跳去</span>
+       <span>跳来跳去</span>
+       <span>跳来跳去</span>
+       <span>跳来跳去</span>
+       <span>跳来跳去</span>
+       <span>跳来跳去</span>
+   </div>
+
+</body>
+</html>
+<script src="../jQuery/jquery-1.9.1.min.js"></script>
+<script src="../jQuery/jquery.easing.min.js"></script>
+<script type="text/javascript">
+    $('#dd').click(function () {
+        $('span:nth-child(1)').animate({'top':'+=200px'},2000,'easeOutBounce');
+        $('span:nth-child(2)').animate({'top':'+=200px'},2200,'easeOutBounce');
+        $('span:nth-child(3)').animate({'top':'+=200px'},2400,'easeOutBounce');
+        $('span:nth-child(4)').animate({'top':'+=200px'},2600,'easeOutBounce');
+        $('span:nth-child(5)').animate({'top':'+=200px'},3000,'easeOutBounce');
+        $('span:nth-child(6)').animate({'top':'+=200px'},3300,'easeOutBounce');
+        $('span:nth-child(7)').animate({'top':'+=200px'},3600,'easeOutBounce');
+        $('span:nth-child(8)').animate({'top':'+=200px'},4000,'easeOutBounce');
+        $('span:nth-child(9)').animate({'top':'+=200px'},4500,'easeOutBounce');
+        $('span:nth-child(10)').animate({'top':'+=200px'},5000,'easeOutBounce')
+    });
+    $('#tingzhi').click(function () {
+        $('span').stop();
+    });
+    $('#jieshu').click(function () {
+       $('span').finish();
+    });
+</script>
